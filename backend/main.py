@@ -11,8 +11,20 @@ scaler_path = os.path.join(BASE_DIR, 'model', 'scaler.pkl')
 features_path = os.path.join(BASE_DIR, 'model', 'feature_columns.pkl')
 
 # Load files
-with open(model_path, 'rb') as f:
+import os
+import pickle
+
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+model_path = os.path.join(BASE_DIR, "model.pkl")
+scaler_path = os.path.join(BASE_DIR, "scaler.pkl")
+
+with open(model_path, "rb") as f:
     model = pickle.load(f)
+
+with open(scaler_path, "rb") as f:
+    scaler = pickle.load(f)
+
 
 with open(scaler_path, 'rb') as f:
     scaler = pickle.load(f)
