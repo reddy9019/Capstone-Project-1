@@ -24,7 +24,8 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 # Backend import
 sys.path.append(os.path.abspath('../backend'))
-from main import predict_output
+from backend.main import predict_output
+
 
 # ===== HEADER =====
 st.markdown(
